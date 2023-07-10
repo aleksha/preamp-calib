@@ -7,6 +7,8 @@ A software to perform calibration of pre-amplifiers for the time-projection cham
 
 `process_dir.py` - analyse sample of measurements
 
+`analyzer.py` - application with GUI (Tkinter, Matplotlib) 
+
 ## Energy calculation
 
 Two mwthods are used. In both simple energy summation is used, i.e.
