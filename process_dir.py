@@ -4,6 +4,7 @@ LEFT_BORDER  = 850
 RIGHT_BORDER = 1300
 Y_LOW        = 0.15
 Y_HIGH       = 0.85
+SHOW_SPEC    = 1
 #===============================================================================
 import os
 import numpy as np
@@ -153,5 +154,15 @@ for s in r:
 print("Mean  Energy = " +str(stat.mean(energies))+" +/- "+str(stat.stdev(energies)/np.sqrt(1000.)))
 print("StDev Energy = " +str(stat.stdev(energies)))
 
-plt.hist( energies )
+#plt.hist( energies )
+
+for idx in range(len(r)):
+    if idx==0:
+        av  = r[idx][2][1]*float(1/len(r))
+    else:
+        av += r[idx][2][1]*float(1/len(r))
+
+plt.plot(r[0][1],av,"b-")
+plt.plot(r[SHOW_SPEC][1],r[SHOW_SPEC][2][1],"r-")
+
 plt.show()
