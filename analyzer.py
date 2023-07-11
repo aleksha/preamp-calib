@@ -21,7 +21,7 @@ def get_files(dir_path,postfix=".txt"):
 
 def process_file(file_name):
     x=[]; y_in=[]; y_out=[]
-    with open(file_name) as fl:
+    with open(file_name, encoding="utf-8") as fl:
         cnt=0
         for line in fl:
             if cnt>2 and len(line)>2:
@@ -215,7 +215,7 @@ window.title("PicoScope's Spectra Analysis")
 #window.rowconfigure(0, minsize=50, weight=1)
 #window.columnconfigure(1, minsize=100, weight=1)
 
-start_path_to_folder = "/home/adzyuba/dev/AMBER/20230530-0001/"
+start_path_to_folder = "./20230530-0001/"
 path_to_folder = tk.StringVar(value=start_path_to_folder)
 txt_edit = tk.Text(window, width=100)
 
@@ -246,13 +246,15 @@ txt_input.grid(row=0,column=1)
 btn_open = tk.Button(frame_input, text="Analyse", command=upd_result )
 #btn_save = tk.Button(frame_input, text="Analyse", command=upd_result( txt_edit, path_to_folder.get() ) )
 #btn_save = tk.Button(frame_input, text="Analyse", command=dummy )
+btn_save = tk.Button(frame_input, text="Save log as...", command=save_file )
 btn_open.grid(row=0,column=2)
+btn_save.grid(row=0,column=3)
 
 #lbl_open.pack()
 #txt_input.pack()
 #btn_save.pack()
 
-btn_save = tk.Button(window, text="Save log as...", command=save_file )
+btn_save = tk.Button(frame_input, text="Save log as...", command=save_file )
 
 frame_input.grid(row=0,column=0)
 
@@ -261,7 +263,10 @@ canvas.get_tk_widget().grid(row=1,column=0)
 
 
 txt_edit.grid(row=2,column=0)
-btn_save.grid(row=3,column=0)
+v=tk.Scrollbar(window, orient='vertical', command=txt_edit.yview)
+v.grid(row=2,column=1,sticky='nsew')
 
+txt_edit['yscrollcommand'] = v.set
+#v.config(command=txt_edit.yview)
 
 window.mainloop()

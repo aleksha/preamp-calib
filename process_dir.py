@@ -1,5 +1,5 @@
 #===============================================================================
-DIR_PATH     = "../20230530-0001/"
+DIR_PATH     = "./20230530-0001/"
 LEFT_BORDER  = 850
 RIGHT_BORDER = 1300
 Y_LOW        = 0.15
@@ -21,7 +21,7 @@ def get_files(dir_path,postfix=".txt"):
 
 def process_file(file_name):
     x=[]; y_in=[]; y_out=[]
-    with open(file_name) as fl:
+    with open(file_name, encoding="utf-8") as fl:
         cnt=0
         for line in fl:
             if cnt>2 and len(line)>2:
