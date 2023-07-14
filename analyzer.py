@@ -6,6 +6,9 @@ Y_LOW        = 0.15
 Y_HIGH       = 0.85
 SHOW_SPEC    = 1
 #===============================================================================
+last_res = None # global var with recent results
+#===============================================================================
+
 import os
 import numpy as np
 #import matplotlib.pyplot as plt
@@ -132,19 +135,29 @@ def analyze_spectrum(spec,left_border=LEFT_BORDER, right_border=RIGHT_BORDER):
 def process_dir( path_to_dir , fig):
     r = get_data(path_to_dir)
 
-    energies = []
-    starts   = []
-    stops    = []
+    energies  = []
+    starts    = []
+    stops     = []
+    durations = []
 
     for s in r:
         m = analyze_spectrum(s)
         energies.append(m[4][0])
         starts.append(m[4][3])
         stops.append(m[4][4])
+        durations.append( m[4][4]-m[4][3])
 
     ss  = path_to_dir
-    ss += "\nMean  Energy = " +str(stat.mean(energies))+" +/- "+str(stat.stdev(energies)/np.sqrt(1000.))
-    ss += "\nStDev Energy = " +str(stat.stdev(energies)) + "\n\n"
+    ss += "\n  Mean  Energy          : " + str(stat.mean(energies))
+    ss += "\n  StDev of Mean Energy  : " + str(stat.stdev(energies)/np.sqrt(1000.))
+    ss += "\n  Median Energy         : " + str(stat.median(energies))
+    ss += "\n  StDev of Energy       : " + str(stat.stdev(energies))
+    ss += "\n  Mean of Start Time    : " + str(stat.mean(starts))
+    ss += "\n  StDev of Start Time   : " + str(stat.stdev(starts))
+    ss += "\n  Mean of Stop Time     : " + str(stat.mean(stops))
+    ss += "\n  StDev of Stop Time    : " + str(stat.stdev(stops))
+    ss += "\n  Mean of Duration      : " + str(stat.mean(durations))
+    ss += "\n  StDev of Duration     : " + str(stat.stdev(durations)) + "\n\n"
 
     for idx in range(len(r)):
         if idx==0:
@@ -156,16 +169,17 @@ def process_dir( path_to_dir , fig):
     plt = fig.add_subplot(111)
     plt.clear()
 
-    plt.hist(energies)
+#    plt.hist(energies)
 
 #    plt.hist(starts)
 
 #    plt = fig.add_subplot(111)
 #    plt.clear()
-#    plt.plot(r[0][1],av,"b-")
-#    plt.plot(r[SHOW_SPEC][1],r[SHOW_SPEC][2][1],"r-")
+    plt.plot(r[0][1],av,"b-")
+    plt.plot(r[SHOW_SPEC][1],r[SHOW_SPEC][2][1],"r-")
 
-    return ss
+    rr = {"energies":energies,"starts":starts,"stops":stops,"durations":durations,"data":r,"av":av}
+    return (ss, rr)
 
 #===============================================================================
 # GUI
@@ -219,6 +233,12 @@ start_path_to_folder = "./20230530-0001/"
 path_to_folder = tk.StringVar(value=start_path_to_folder)
 txt_edit = tk.Text(window, width=100)
 
+def browse_button():
+    # Allow user to select a directory and store it in global var
+    # called folder_path
+    filename = tk.filedialog.askdirectory()
+    path_to_folder.set(filename)
+
 #scroll_bar = tk.Scrollbar(window)
 
 fig_draw = Figure(figsize=(7,5), dpi=100)
@@ -231,10 +251,50 @@ def upd_result(txt=txt_edit,fig=fig_draw):
     folder=path_to_folder.get()
     print(folder)
     res = process_dir(folder,fig)
+    last_ras = res
     canvas.draw()
-    txt.insert(tk.END, res)
+    txt.insert(tk.END, res[0])
+    global last_res
+    last_res = res
+    return res
 
+def draw_canv(what="energies",txt=txt_edit,fig=fig_draw):
+    global last_res
+    if last_res==None:
+        last_res = upd_result(txt,fig)
+    fig.clear()
+    plt = fig.add_subplot(111)
+    plt.clear()
+    plt.hist( last_res[1][what] )
+    canvas.draw()
 
+def draw_energies(txt=txt_edit,fig=fig_draw):
+    draw_canv("energies",txt,fig)
+
+def draw_starts(txt=txt_edit,fig=fig_draw):
+    draw_canv("starts",txt,fig)
+
+def draw_stops(txt=txt_edit,fig=fig_draw):
+    draw_canv("stops",txt,fig)
+
+def draw_durations(txt=txt_edit,fig=fig_draw):
+    draw_canv("durations",txt,fig)
+
+def draw_spectra(txt=txt_edit,fig=fig_draw):
+    draw_canv("durations",txt,fig)
+    global last_res
+    if last_res==None:
+        last_res = upd_result(txt,fig)
+    fig.clear()
+    plt = fig.add_subplot(111)
+    plt.clear()
+    plt.plot(last_res[1]["data"][0][1],last_res[1]["av"],"b-")
+    plt.plot(last_res[1]["data"][SHOW_SPEC][1],last_res[1]["data"][SHOW_SPEC][2][1],"r-")
+    canvas.draw()
+
+def dummy():
+    print("Dummy function has been called")
+    
 frame_input = tk.Frame(window)
 #frame_input = tk.Frame(window, relief=tk.RAISED, bd=2)
 
@@ -243,26 +303,42 @@ lbl_open = tk.Label(frame_input, text="Folder with data: ")
 lbl_open.grid(row=0,column=0)
 txt_input = tk.Entry(frame_input, textvariable=path_to_folder, width=80)
 txt_input.grid(row=0,column=1)
+btn_browse = tk.Button(frame_input, text="Browse", command=browse_button)
 btn_open = tk.Button(frame_input, text="Analyse", command=upd_result )
 #btn_save = tk.Button(frame_input, text="Analyse", command=upd_result( txt_edit, path_to_folder.get() ) )
 #btn_save = tk.Button(frame_input, text="Analyse", command=dummy )
 btn_save = tk.Button(frame_input, text="Save log as...", command=save_file )
-btn_open.grid(row=0,column=2)
-btn_save.grid(row=0,column=3)
+btn_browse.grid(row=0, column=2)
+btn_open.grid(row=0,column=3)
+btn_save.grid(row=0,column=4)
 
 #lbl_open.pack()
 #txt_input.pack()
 #btn_save.pack()
 
-btn_save = tk.Button(frame_input, text="Save log as...", command=save_file )
-
 frame_input.grid(row=0,column=0)
 
+frame_draw = tk.Frame(window)
+lbl_draw = tk.Label(frame_draw, text="Draw buttons: ")
+btn_energies  = tk.Button(frame_draw, text="Energies", command=draw_energies )
+btn_starts    = tk.Button(frame_draw, text="Starts", command=draw_starts )
+btn_stops     = tk.Button(frame_draw, text="Stops", command=draw_stops  )
+btn_durations = tk.Button(frame_draw, text="Durations", command=draw_durations  )
+btn_spectra   = tk.Button(frame_draw, text="Spectra", command=draw_spectra  )
+lbl_draw.grid(row=0,column=0)
+btn_energies.grid(row=0,column=1)
+btn_starts.grid(row=0,column=2)
+btn_stops.grid(row=0,column=3)
+btn_durations.grid(row=0,column=4)
+btn_spectra.grid(row=0,column=5)
+frame_draw.grid(row=1,column=0)
+
+
 #canvas.get_tk_widget().grid(row=2,column=0,side=tk.BOTTOM, fill=tk.BOTH, expand=True)
-canvas.get_tk_widget().grid(row=1,column=0)
+canvas.get_tk_widget().grid(row=2,column=0)
 
 
-txt_edit.grid(row=2,column=0)
+txt_edit.grid(row=3,column=0)
 v=tk.Scrollbar(window, orient='vertical', command=txt_edit.yview)
 v.grid(row=2,column=1,sticky='nsew')
 
