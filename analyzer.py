@@ -22,6 +22,7 @@ import matplotlib
 matplotlib.use("TkAgg")
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from matplotlib.figure import Figure
+from matplotlib.backends.backend_pdf import PdfPages
 
 from datetime import datetime
 
@@ -32,6 +33,7 @@ path_to_folder = tk.StringVar(value=start_path_to_folder)
 
 methods = ["slopes", "baseline"]
 method_var = tk.StringVar(value=methods[0]) 
+pdf_var = tk.StringVar(value="output") 
 
 left_border_var  = tk.IntVar(value=LEFT_BORDER ) 
 right_border_var = tk.IntVar(value=RIGHT_BORDER) 
@@ -171,6 +173,7 @@ def process_dir( path_to_dir , fig):
     stops     = []
     durations = []
     gen       = []
+    amp       = []
 
     for s in r:
         m = analyze_spectrum(s)
@@ -179,6 +182,7 @@ def process_dir( path_to_dir , fig):
         stops.append(m[4][4])
         durations.append( m[4][4]-m[4][3])
         gen.append( m[7])
+        amp.append( m[1])
 
     now = datetime.now()
     dt_string = now.strftime("%Y-%m-%d %H:%M:%S")
@@ -193,20 +197,24 @@ def process_dir( path_to_dir , fig):
         ss += str(high_threshold_var.get())+ "]% of spectrum height)"
     ss += "\n  Borders : [" + str(left_border_var.get()) + "," + str(right_border_var.get())+ "]"
     ss += "\n------------------------------ RESULTS ------------------------------------------"
-    ss += "\n  Mean  Input           : " + str(stat.mean(gen))
-    ss += "\n  StDev of Mean Input   : " + str(stat.stdev(gen)/np.sqrt(float(len(gen))))
-    ss += "\n  Median Input          : " + str(stat.median(gen))
-    ss += "\n  StDev of Input        : " + str(stat.stdev(gen))
-    ss += "\n  Mean  Energy          : " + str(stat.mean(energies))
-    ss += "\n  StDev of Mean Energy  : " + str(stat.stdev(energies)/np.sqrt(float(len(energies))))
-    ss += "\n  Median Energy         : " + str(stat.median(energies))
-    ss += "\n  StDev of Energy       : " + str(stat.stdev(energies))
-    ss += "\n  Mean of Start Time    : " + str(stat.mean(starts))
-    ss += "\n  StDev of Start Time   : " + str(stat.stdev(starts))
-    ss += "\n  Mean of Stop Time     : " + str(stat.mean(stops))
-    ss += "\n  StDev of Stop Time    : " + str(stat.stdev(stops))
-    ss += "\n  Mean of Duration      : " + str(stat.mean(durations))
-    ss += "\n  StDev of Duration     : " + str(stat.stdev(durations))
+    ss += "\n  Mean  Input             : " + str(stat.mean(gen))
+    ss += "\n  StDev of Mean Input     : " + str(stat.stdev(gen)/np.sqrt(float(len(gen))))
+    ss += "\n  Median Input            : " + str(stat.median(gen))
+    ss += "\n  StDev of Input          : " + str(stat.stdev(gen))
+    ss += "\n  Mean  Energy            : " + str(stat.mean(energies))
+    ss += "\n  StDev of Mean Energy    : " + str(stat.stdev(energies)/np.sqrt(float(len(energies))))
+    ss += "\n  Median Energy           : " + str(stat.median(energies))
+    ss += "\n  StDev of Energy         : " + str(stat.stdev(energies))
+    ss += "\n  Mean of Amplitude       : " + str(stat.mean(amp))
+    ss += "\n  StDev of Mean Amplitude : " + str(stat.stdev(amp)/np.sqrt(float(len(amp))))
+    ss += "\n  Median Amplitude        : " + str(stat.median(amp))
+    ss += "\n  StDev of Amplitude      : " + str(stat.stdev(amp))
+    ss += "\n  Mean of Start Time      : " + str(stat.mean(starts))
+    ss += "\n  StDev of Start Time     : " + str(stat.stdev(starts))
+    ss += "\n  Mean of Stop Time       : " + str(stat.mean(stops))
+    ss += "\n  StDev of Stop Time      : " + str(stat.stdev(stops))
+    ss += "\n  Mean of Duration        : " + str(stat.mean(durations))
+    ss += "\n  StDev of Duration       : " + str(stat.stdev(durations))
     ss += "\n=================================================================================\n\n"
 
     for idx in range(len(r)):
@@ -229,7 +237,7 @@ def process_dir( path_to_dir , fig):
     plt.plot(r[SHOW_SPEC][1],r[SHOW_SPEC][2][1],"r-")
     plt.set_xlabel("Time [us]")
     plt.set_ylabel("Signal [a.u.]")
-    rr = {"energies":energies,"starts":starts,"stops":stops,"durations":durations,"data":r,"av":av,"gen":gen}
+    rr = {"energies":energies,"starts":starts,"stops":stops,"durations":durations,"data":r,"av":av,"gen":gen,"amp":amp}
     return (ss, rr)
 
 #===============================================================================
@@ -298,7 +306,8 @@ def upd_result(txt=txt_edit,fig=fig_draw):
 
 xlab = {  "energies":"Energy [a.u.]",
           "starts":"Signal start [ch.]","stops":"Signal stop [ch.]",
-          "durations":"Signal duration [ch.]","gen":"Input signal [a.u]"}
+          "durations":"Signal duration [ch.]","gen":"Input signal [a.u.]",
+          "amp":"Amplitude [a.u.]"}
 
 def draw_canv(what="energies",txt=txt_edit,fig=fig_draw):
     global last_res
@@ -327,6 +336,9 @@ def draw_durations(txt=txt_edit,fig=fig_draw):
 def draw_input(txt=txt_edit,fig=fig_draw):
     draw_canv("gen",txt,fig)
 
+def draw_amp(txt=txt_edit,fig=fig_draw):
+    draw_canv("amp",txt,fig)
+
 def draw_spectra(txt=txt_edit,fig=fig_draw):
     global last_res
     if last_res==None:
@@ -352,6 +364,53 @@ def draw_scatter(txt=txt_edit,fig=fig_draw):
     plt.set_ylabel('Energy [a.u.]')
     canvas.draw()
 
+
+def create_pdf(pdf_name="output.pdf",txt=txt_edit,fig=fig_draw):
+    global last_res
+    if last_res==None:
+        last_res = upd_result(txt,fig)
+
+    pdf = PdfPages( str(pdf_var.get()) +".pdf")
+
+    fig.clear()
+    plt = fig.add_subplot(111)
+    plt.clear()
+#    plt.plot([0,1],[0,1],"b")
+    plt.text(0.0, 0.0, last_res[0], fontsize = 6)
+    plt.axis('off')
+    pdf.savefig( fig )
+
+    fig.clear()
+    plt = fig.add_subplot(111)
+    plt.clear()
+    plt.scatter(last_res[1]["gen"],last_res[1]["energies"])
+    plt.set_xlabel("Input signal [a.u]")
+    plt.set_ylabel('Energy [a.u.]')
+    pdf.savefig( fig )
+
+    fig.clear()
+    plt = fig.add_subplot(111)
+    plt.clear()
+    plt.plot(last_res[1]["data"][0][1],last_res[1]["av"],"b-")
+    plt.plot(last_res[1]["data"][SHOW_SPEC][1],last_res[1]["data"][SHOW_SPEC][2][1],"r-")
+    plt.set_xlabel("Time [us]")
+    pdf.savefig( fig )
+
+
+    lst_pdf = ["energies", "starts", "stops", "durations", "gen","amp"]
+    for what in lst_pdf:
+        fig.clear()
+        plt = fig.add_subplot(111)
+        plt.clear()
+        plt.hist( last_res[1][what] )
+        plt.set_xlabel(xlab[what])
+        plt.set_ylabel("Entries")
+        pdf.savefig( fig )
+
+    pdf.close()
+
+
+    
 def dummy():
     print("Dummy function has been called")
     
@@ -361,20 +420,22 @@ frame_input = tk.Frame(window)
 #lbl_open = tk.Label(window, text="Open", command=open_file)
 lbl_open = tk.Label(frame_input, text="Folder with data: ")
 lbl_open.grid(row=0,column=0)
-txt_input = tk.Entry(frame_input, textvariable=path_to_folder, width=80)
+txt_input = tk.Entry(frame_input, textvariable=path_to_folder, width=50)
 txt_input.grid(row=0,column=1)
 btn_browse = tk.Button(frame_input, text="Browse", command=browse_button)
 btn_open = tk.Button(frame_input, text="Analyse", command=upd_result )
 #btn_save = tk.Button(frame_input, text="Analyse", command=upd_result( txt_edit, path_to_folder.get() ) )
 #btn_save = tk.Button(frame_input, text="Analyse", command=dummy )
 btn_save = tk.Button(frame_input, text="Save log as...", command=save_file )
+lbl_pdf = tk.Label(frame_input, text="PDF file: ")
+ent_pdf = tk.Entry(frame_input, textvariable=pdf_var, width=15)
+btn_pdf  = tk.Button(frame_input, text="PDF", command=create_pdf )
 btn_browse.grid(row=0, column=2)
 btn_open.grid(row=0,column=3)
 btn_save.grid(row=0,column=4)
-
-#lbl_open.pack()
-#txt_input.pack()
-#btn_save.pack()
+lbl_pdf.grid(row=0,column=5)
+ent_pdf.grid(row=0,column=6)
+btn_pdf.grid(row=0,column=7)
 
 frame_input.grid(row=0,column=0)
 
@@ -416,6 +477,7 @@ btn_durations = tk.Button(frame_draw, text="Durations", command=draw_durations  
 btn_spectra   = tk.Button(frame_draw, text="Spectra", command=draw_spectra  )
 btn_input     = tk.Button(frame_draw, text="Input", command=draw_input )
 btn_scatter   = tk.Button(frame_draw, text="Scatter", command=draw_scatter )
+btn_amp       = tk.Button(frame_draw, text="Amplitude", command=draw_amp )
 lbl_draw.grid(row=0,column=0)
 btn_energies.grid(row=0,column=1)
 btn_starts.grid(row=0,column=2)
@@ -424,6 +486,7 @@ btn_durations.grid(row=0,column=4)
 btn_spectra.grid(row=0,column=5)
 btn_input.grid(row=0,column=6)
 btn_scatter.grid(row=0,column=7)
+btn_amp.grid(row=0,column=8)
 frame_draw.grid(row=2,column=0)
 
 
