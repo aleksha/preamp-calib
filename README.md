@@ -1,13 +1,17 @@
 # preamp-calib
 A software to perform calibration of pre-amplifiers for the time-projection chamber (TPC) readout.
 
+## Application
+
+`analyzer.py` - application with GUI (Tkinter, Matplotlib, NumPy) 
+
+To test unzip `20230605-0005.zip`
+
 ## Interactive scripts
 
 `read_file.py` - draw pair PicoScope's spectra (channels A ans B) from one measurement
 
 `process_dir.py` - analyse sample of measurements
-
-`analyzer.py` - application with GUI (Tkinter, Matplotlib) 
 
 ## Energy calculation
 
