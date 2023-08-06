@@ -105,6 +105,8 @@ def calc_energy_slopes(spec,chan,max,left_base,right_base,y_low=Y_LOW,y_high=Y_H
 
     # go left
     i = chan
+    i_low = chan
+    i_high = chan
     while spec[2][1][i]>y_high:
         energy += ( (spec[1][i]-spec[1][i-1])*0.5*( spec[2][1][i]+spec[2][1][i+1] ) )
         if spec[2][1][i-1]<y_high:
