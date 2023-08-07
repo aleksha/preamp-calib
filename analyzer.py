@@ -13,6 +13,7 @@ import os
 import numpy as np
 #import matplotlib.pyplot as plt
 import statistics as stat
+from scipy.stats import pearsonr as rho
 
 import tkinter as tk
 from tkinter.ttk import Combobox
@@ -39,6 +40,9 @@ left_border_var  = tk.IntVar(value=LEFT_BORDER )
 right_border_var = tk.IntVar(value=RIGHT_BORDER) 
 low_threshold_var  = tk.IntVar(value=int(Y_LOW*100.) ) 
 high_threshold_var = tk.IntVar(value=int(Y_HIGH*100.)) 
+
+preamp_name_var = tk.StringVar(value="R23-") 
+preamp_num_var = tk.StringVar(value="00") 
 
 def get_files(dir_path,postfix=".txt"):
     res = []
@@ -166,6 +170,10 @@ def analyze_spectrum(spec,left_border=LEFT_BORDER, right_border=RIGHT_BORDER):
 #     return ( np.argmax(spec[2][1]) , np.max(spec[2][1]), np.average( spec[2][1][0:850] ) , np.average( spec[2][1][1300:] ) )
     return ( chan , val, left_base, right_base , energy, left_in, right_in, left_in - right_in )
 
+def ratio_unc(A,sA,B,sB,rho):
+    if B!=0 and A!=0:
+        return A/B, abs(A/B)*np.sqrt(pow(sA/A,2)+pow(sB/B,2))
+    return 0.
 
 def process_dir( path_to_dir , fig):
     r = get_data(path_to_dir)
@@ -183,7 +191,7 @@ def process_dir( path_to_dir , fig):
         starts.append(m[4][3])
         stops.append(m[4][4])
         durations.append( m[4][4]-m[4][3])
-        gen.append( m[7])
+        gen.append( m[7]*0.001)
         amp.append( m[1])
 
     now = datetime.now()
@@ -198,6 +206,9 @@ def process_dir( path_to_dir , fig):
         ss += "    (linear part in [" + str(low_threshold_var.get()) + ","
         ss += str(high_threshold_var.get())+ "]% of spectrum height)"
     ss += "\n  Borders : [" + str(left_border_var.get()) + "," + str(right_border_var.get())+ "]"
+    ss += "\n------------------------------ PREAMP. ------------------------------------------"
+    ss += "\n  Lable   : " + str(preamp_name_var.get())
+    ss += "\n  Channel : " + str(preamp_num_var.get())
     ss += "\n------------------------------ RESULTS ------------------------------------------"
     ss += "\n  Mean  Input             : " + str(stat.mean(gen))
     ss += "\n  StDev of Mean Input     : " + str(stat.stdev(gen)/np.sqrt(float(len(gen))))
@@ -217,8 +228,24 @@ def process_dir( path_to_dir , fig):
     ss += "\n  StDev of Stop Time      : " + str(stat.stdev(stops))
     ss += "\n  Mean of Duration        : " + str(stat.mean(durations))
     ss += "\n  StDev of Duration       : " + str(stat.stdev(durations))
+    ss += "\n  Correlation             : " + str(rho(energies,gen)[0])
     ss += "\n=================================================================================\n\n"
 
+
+    rat = ratio_unc( stat.mean(energies),
+                     stat.stdev(energies)/np.sqrt(float(len(energies))),
+                     stat.mean(gen),
+                     stat.stdev(gen)/np.sqrt(float(len(gen))),
+                     rho(energies,gen)[0])
+    
+    log_ss  = " | "   + str(preamp_name_var.get())
+    log_ss += " | "   + str(preamp_num_var.get())
+    log_ss += " | "   + "{:.3f}".format( rat[0] )
+    log_ss += " +/- " + "{:.3f}".format( rat[1] )
+    log_ss += " | "   + "{:.3f}".format( stat.median(energies)/stat.median(gen) )
+    log_ss += " | "
+    print(log_ss)
+    
     for idx in range(len(r)):
         if idx==0:
             av  = r[idx][2][1]*float(1/len(r))
@@ -372,7 +399,8 @@ def create_pdf(pdf_name="output.pdf",txt=txt_edit,fig=fig_draw):
     if last_res==None:
         last_res = upd_result(txt,fig)
 
-    pdf = PdfPages( str(pdf_var.get()) +".pdf")
+    pdf_name = str(pdf_var.get())+"_" +str(preamp_name_var.get()) + "_"+str(preamp_num_var.get()) +".pdf"
+    pdf = PdfPages( pdf_name)
 
     fig.clear()
     plt = fig.add_subplot(111)
@@ -410,6 +438,7 @@ def create_pdf(pdf_name="output.pdf",txt=txt_edit,fig=fig_draw):
         pdf.savefig( fig )
 
     pdf.close()
+    print("PDF file " + pdf_name + " has been created")
 
 
     
@@ -429,7 +458,7 @@ btn_open = tk.Button(frame_input, text="Analyse", command=upd_result )
 #btn_save = tk.Button(frame_input, text="Analyse", command=upd_result( txt_edit, path_to_folder.get() ) )
 #btn_save = tk.Button(frame_input, text="Analyse", command=dummy )
 btn_save = tk.Button(frame_input, text="Save log as...", command=save_file )
-lbl_pdf = tk.Label(frame_input, text="PDF file: ")
+lbl_pdf = tk.Label(frame_input, text="PDF file prefix: ")
 ent_pdf = tk.Entry(frame_input, textvariable=pdf_var, width=15)
 btn_pdf  = tk.Button(frame_input, text="PDF", command=create_pdf )
 btn_browse.grid(row=0, column=2)
@@ -471,7 +500,7 @@ ent_high.grid(row=0,column=9)
 frame_control.grid(row=1,column=0)
 
 frame_draw = tk.Frame(window)
-lbl_draw = tk.Label(frame_draw, text="Draw buttons: ")
+lbl_draw = tk.Label(frame_draw, text="\tDraw buttons: ")
 btn_energies  = tk.Button(frame_draw, text="Energies", command=draw_energies )
 btn_starts    = tk.Button(frame_draw, text="Starts", command=draw_starts )
 btn_stops     = tk.Button(frame_draw, text="Stops", command=draw_stops  )
@@ -480,15 +509,26 @@ btn_spectra   = tk.Button(frame_draw, text="Spectra", command=draw_spectra  )
 btn_input     = tk.Button(frame_draw, text="Input", command=draw_input )
 btn_scatter   = tk.Button(frame_draw, text="Scatter", command=draw_scatter )
 btn_amp       = tk.Button(frame_draw, text="Amplitude", command=draw_amp )
-lbl_draw.grid(row=0,column=0)
-btn_energies.grid(row=0,column=1)
-btn_starts.grid(row=0,column=2)
-btn_stops.grid(row=0,column=3)
-btn_durations.grid(row=0,column=4)
-btn_spectra.grid(row=0,column=5)
-btn_input.grid(row=0,column=6)
-btn_scatter.grid(row=0,column=7)
-btn_amp.grid(row=0,column=8)
+lbl_name = tk.Label(frame_draw, text="Preamp: ")
+ent_name = tk.Entry(frame_draw, textvariable=preamp_name_var, width=8)
+lbl_num  = tk.Label(frame_draw, text="Ch: ")
+ent_num  = tk.Entry(frame_draw, textvariable=preamp_num_var, width=2)
+
+
+lbl_name.grid(row=0,column=0)
+ent_name.grid(row=0,column=1)
+lbl_num.grid(row=0,column=2)
+ent_num.grid(row=0,column=3)
+lbl_draw.grid(row=0,column=4)
+btn_energies.grid(row=0,column=5)
+btn_starts.grid(row=0,column=6)
+btn_stops.grid(row=0,column=7)
+btn_durations.grid(row=0,column=8)
+btn_spectra.grid(row=0,column=9)
+btn_input.grid(row=0,column=10)
+btn_scatter.grid(row=0,column=11)
+btn_amp.grid(row=0,column=12)
+
 frame_draw.grid(row=2,column=0)
 
 
