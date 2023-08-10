@@ -1,7 +1,7 @@
 #===============================================================================
 #DIR_PATH     = "../20230605-0005/"
-LEFT_BORDER  = 850
-RIGHT_BORDER = 1300
+LEFT_BORDER  = 1500
+RIGHT_BORDER = 2800
 Y_LOW        = 0.15
 Y_HIGH       = 0.85
 SHOW_SPEC    = 1
@@ -34,7 +34,7 @@ path_to_folder = tk.StringVar(value=start_path_to_folder)
 
 methods = ["slopes", "baseline"]
 method_var = tk.StringVar(value=methods[0]) 
-pdf_var = tk.StringVar(value="output") 
+pdf_var = tk.StringVar(value="recalib") 
 
 left_border_var  = tk.IntVar(value=LEFT_BORDER ) 
 right_border_var = tk.IntVar(value=RIGHT_BORDER) 

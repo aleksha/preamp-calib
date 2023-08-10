@@ -1,497 +1,497 @@
 =================================================================================
-  Date and time : 2023-08-07 09:10:14
+  Date and time : 2023-08-10 11:02:08
 ------------------------------ CONDITIONS ---------------------------------------
   Folder  : C:/Users/User/Documents/Waveforms/R23-C2/20230805-0001
   Method  : slopes    (linear part in [15,85]% of spectrum height)
-  Borders : [850,1300]
+  Borders : [1500,2800]
 ------------------------------ PREAMP. ------------------------------------------
   Lable   : R23-C2
   Channel : 01
 ------------------------------ RESULTS ------------------------------------------
-  Mean  Input             : 0.06750043232591085
-  StDev of Mean Input     : 1.181620541647757e-05
-  Median Input            : 0.06747779539736712
-  StDev of Input          : 0.0003736612241648762
-  Mean  Energy            : 3.16170966342932
-  StDev of Mean Energy    : 0.0005065342549120986
-  Median Energy           : 3.1605199838830913
-  StDev of Energy         : 0.016018019584185646
+  Mean  Input             : 0.0797637110510649
+  StDev of Mean Input     : 1.4105890780398767e-05
+  Median Input            : 0.07972246721666668
+  StDev of Input          : 0.00044606743291630125
+  Mean  Energy            : 3.161739240865371
+  StDev of Mean Energy    : 0.0005060980311725169
+  Median Energy           : 3.1605050955285545
+  StDev of Energy         : 0.016004224978320502
   Mean of Amplitude       : 1.739720529
   StDev of Mean Amplitude : 0.00024319912092682122
   Median Amplitude        : 1.738432
   StDev of Amplitude      : 0.007690631470794749
-  Mean of Start Time      : 1672.3784785927046
-  StDev of Start Time     : 0.9385117915403898
-  Mean of Stop Time       : 2183.256716991858
-  StDev of Stop Time      : 1.3832076823555361
-  Mean of Duration        : 510.87823839915353
-  StDev of Duration       : 1.5447064191360023
-  Correlation             : 0.6567276088945909
+  Mean of Start Time      : 1672.3770079032427
+  StDev of Start Time     : 0.9134676529255903
+  Mean of Stop Time       : 2183.259096537003
+  StDev of Stop Time      : 1.3621025968919076
+  Mean of Duration        : 510.88208863376036
+  StDev of Duration       : 1.4740560287323428
+  Correlation             : 0.6532343427448069
 =================================================================================
 
 =================================================================================
-  Date and time : 2023-08-07 09:10:44
+  Date and time : 2023-08-10 11:02:27
 ------------------------------ CONDITIONS ---------------------------------------
   Folder  : C:/Users/User/Documents/Waveforms/R23-C2/20230805-0002
   Method  : slopes    (linear part in [15,85]% of spectrum height)
-  Borders : [850,1300]
+  Borders : [1500,2800]
 ------------------------------ PREAMP. ------------------------------------------
   Lable   : R23-C2
   Channel : 02
 ------------------------------ RESULTS ------------------------------------------
-  Mean  Input             : 0.06723154240618424
-  StDev of Mean Input     : 9.442730943456346e-06
-  Median Input            : 0.06722897920167345
-  StDev of Input          : 0.00029860537113472686
-  Mean  Energy            : 3.177304269381052
-  StDev of Mean Energy    : 0.0003479187313626649
-  Median Energy           : 3.177389300874737
-  StDev of Energy         : 0.011002156317422788
+  Mean  Input             : 0.07948582384248722
+  StDev of Mean Input     : 1.1011145933428865e-05
+  Median Input            : 0.07949195438511764
+  StDev of Input          : 0.00034820300798135993
+  Mean  Energy            : 3.1773112618166004
+  StDev of Mean Energy    : 0.0003478546415557299
+  Median Energy           : 3.1773630742293832
+  StDev of Energy         : 0.011000129619775638
   Mean of Amplitude       : 1.73084289
   StDev of Mean Amplitude : 0.00015098114109008746
   Median Amplitude        : 1.730619
   StDev of Amplitude      : 0.004774442895759137
-  Mean of Start Time      : 1673.0156295034
-  StDev of Start Time     : 0.9389899294034063
-  Mean of Stop Time       : 2189.5048469502717
-  StDev of Stop Time      : 1.5450673042323182
-  Mean of Duration        : 516.4892174468713
-  StDev of Duration       : 1.717726078493589
-  Correlation             : 0.3492438174626035
+  Mean of Start Time      : 1673.009686396611
+  StDev of Start Time     : 0.9163735536287881
+  Mean of Stop Time       : 2189.514180530377
+  StDev of Stop Time      : 1.5322973941970912
+  Mean of Duration        : 516.5044941337658
+  StDev of Duration       : 1.6669937876408565
+  Correlation             : 0.3253086379905134
 =================================================================================
 
 =================================================================================
-  Date and time : 2023-08-07 09:11:04
+  Date and time : 2023-08-10 11:02:47
 ------------------------------ CONDITIONS ---------------------------------------
   Folder  : C:/Users/User/Documents/Waveforms/R23-C2/20230805-0003
   Method  : slopes    (linear part in [15,85]% of spectrum height)
-  Borders : [850,1300]
+  Borders : [1500,2800]
 ------------------------------ PREAMP. ------------------------------------------
   Lable   : R23-C2
   Channel : 03
 ------------------------------ RESULTS ------------------------------------------
-  Mean  Input             : 0.06723667850531946
-  StDev of Mean Input     : 1.0146794508131012e-05
-  Median Input            : 0.06723203980942336
-  StDev of Input          : 0.000320869815953819
-  Mean  Energy            : 3.225435043581723
-  StDev of Mean Energy    : 0.00040606656506990565
-  Median Energy           : 3.2254656031465223
-  StDev of Energy         : 0.012840952272618722
+  Mean  Input             : 0.07951516485881636
+  StDev of Mean Input     : 1.1819967790794823e-05
+  Median Input            : 0.07952254177238276
+  StDev of Input          : 0.0003737802008874026
+  Mean  Energy            : 3.2254224508773834
+  StDev of Mean Energy    : 0.0004058616352847806
+  Median Energy           : 3.2253776157761433
+  StDev of Energy         : 0.01283447182380468
   Mean of Amplitude       : 1.742470252
   StDev of Mean Amplitude : 0.0001611207035163315
   Median Amplitude        : 1.7424
   StDev of Amplitude      : 0.00509508401320308
-  Mean of Start Time      : 1673.6148972824083
-  StDev of Start Time     : 7.354436826293527
-  Mean of Stop Time       : 2194.705404735908
-  StDev of Stop Time      : 1.56991030714073
-  Mean of Duration        : 521.0905074534998
-  StDev of Duration       : 7.465910314146343
-  Correlation             : 0.4417458183661965
+  Mean of Start Time      : 1673.6108793652531
+  StDev of Start Time     : 7.367712047510943
+  Mean of Stop Time       : 2194.71128048663
+  StDev of Stop Time      : 1.5550520851070717
+  Mean of Duration        : 521.1004011213771
+  StDev of Duration       : 7.476482966481079
+  Correlation             : 0.32725656100574685
 =================================================================================
 
 =================================================================================
-  Date and time : 2023-08-07 09:11:21
+  Date and time : 2023-08-10 11:03:10
 ------------------------------ CONDITIONS ---------------------------------------
   Folder  : C:/Users/User/Documents/Waveforms/R23-C2/20230805-0004
   Method  : slopes    (linear part in [15,85]% of spectrum height)
-  Borders : [850,1300]
+  Borders : [1500,2800]
 ------------------------------ PREAMP. ------------------------------------------
   Lable   : R23-C2
   Channel : 04
 ------------------------------ RESULTS ------------------------------------------
-  Mean  Input             : 0.06738190613391698
-  StDev of Mean Input     : 1.0621403863312566e-05
-  Median Input            : 0.06736523439325133
-  StDev of Input          : 0.00033587828156579446
-  Mean  Energy            : 3.217792491491719
-  StDev of Mean Energy    : 0.00046689384643993834
-  Median Energy           : 3.2161817687178225
-  StDev of Energy         : 0.014764479802671027
+  Mean  Input             : 0.07963694441497177
+  StDev of Mean Input     : 1.2777371669941438e-05
+  Median Input            : 0.07961103301617646
+  StDev of Input          : 0.0004040559698752415
+  Mean  Energy            : 3.2177934284951744
+  StDev of Mean Energy    : 0.00046640365531755223
+  Median Energy           : 3.216260192237609
+  StDev of Energy         : 0.014748978598315683
   Mean of Amplitude       : 1.735183717
   StDev of Mean Amplitude : 0.00023811730707539905
   Median Amplitude        : 1.734037
   StDev of Amplitude      : 0.007529930406639884
-  Mean of Start Time      : 1672.8202347549932
-  StDev of Start Time     : 0.9699802984172846
-  Mean of Stop Time       : 2194.639051061504
-  StDev of Stop Time      : 1.5575990988712844
-  Mean of Duration        : 521.8188163065107
-  StDev of Duration       : 1.6975912972061153
-  Correlation             : 0.6107157375508158
+  Mean of Start Time      : 1672.81285296284
+  StDev of Start Time     : 0.9414063735417116
+  Mean of Stop Time       : 2194.650556938196
+  StDev of Stop Time      : 1.5229300313364371
+  Mean of Duration        : 521.8377039753559
+  StDev of Duration       : 1.602030495849518
+  Correlation             : 0.6171832220033582
 =================================================================================
 
 =================================================================================
-  Date and time : 2023-08-07 09:11:50
+  Date and time : 2023-08-10 11:03:31
 ------------------------------ CONDITIONS ---------------------------------------
   Folder  : C:/Users/User/Documents/Waveforms/R23-C2/20230805-0005
   Method  : slopes    (linear part in [15,85]% of spectrum height)
-  Borders : [850,1300]
+  Borders : [1500,2800]
 ------------------------------ PREAMP. ------------------------------------------
   Lable   : R23-C2
   Channel : 05
 ------------------------------ RESULTS ------------------------------------------
-  Mean  Input             : 0.06739766927804888
-  StDev of Mean Input     : 1.079504377649717e-05
-  Median Input            : 0.0673742060924035
-  StDev of Input          : 0.0003413692577495669
-  Mean  Energy            : 3.1482991815896635
-  StDev of Mean Energy    : 0.00044549330241251033
-  Median Energy           : 3.1472343221690395
-  StDev of Energy         : 0.014087735179737174
+  Mean  Input             : 0.07964127587321353
+  StDev of Mean Input     : 1.2599821457189552e-05
+  Median Input            : 0.07961353486862746
+  StDev of Input          : 0.0003984413391618071
+  Mean  Energy            : 3.1483041899453186
+  StDev of Mean Energy    : 0.0004450867145107337
+  Median Energy           : 3.147231170527771
+  StDev of Energy         : 0.014074877741350343
   Mean of Amplitude       : 1.740916483
   StDev of Mean Amplitude : 0.00022041894243438978
   Median Amplitude        : 1.73947
   StDev of Amplitude      : 0.0069702589753821076
-  Mean of Start Time      : 1672.5955279098007
-  StDev of Start Time     : 0.9655580003866434
-  Mean of Stop Time       : 2180.5174234287
-  StDev of Stop Time      : 1.3782247607907754
-  Mean of Duration        : 507.9218955188995
-  StDev of Duration       : 1.5542150529745575
-  Correlation             : 0.5834716105730082
+  Mean of Start Time      : 1672.5994048952696
+  StDev of Start Time     : 0.9449822077566061
+  Mean of Stop Time       : 2180.511683789439
+  StDev of Stop Time      : 1.3623643598113158
+  Mean of Duration        : 507.91227889416945
+  StDev of Duration       : 1.4981709021923038
+  Correlation             : 0.5978546833198554
 =================================================================================
 
 =================================================================================
-  Date and time : 2023-08-07 09:12:12
+  Date and time : 2023-08-10 11:03:55
 ------------------------------ CONDITIONS ---------------------------------------
   Folder  : C:/Users/User/Documents/Waveforms/R23-C2/20230805-0006
   Method  : slopes    (linear part in [15,85]% of spectrum height)
-  Borders : [850,1300]
+  Borders : [1500,2800]
 ------------------------------ PREAMP. ------------------------------------------
   Lable   : R23-C2
   Channel : 06
 ------------------------------ RESULTS ------------------------------------------
-  Mean  Input             : 0.06751881290838421
-  StDev of Mean Input     : 1.1712383320559146e-05
-  Median Input            : 0.06752023461730484
-  StDev of Input          : 0.0003703780812193293
-  Mean  Energy            : 3.192695978548775
-  StDev of Mean Energy    : 0.0004955980545703938
-  Median Energy           : 3.1924543339898377
-  StDev of Energy         : 0.015672186563908654
+  Mean  Input             : 0.07980007187653393
+  StDev of Mean Input     : 1.3541407226173538e-05
+  Median Input            : 0.07980033477931373
+  StDev of Input          : 0.0004282168955857124
+  Mean  Energy            : 3.1926995510691594
+  StDev of Mean Energy    : 0.0004955594895398403
+  Median Energy           : 3.1925080249076583
+  StDev of Energy         : 0.015670967030562827
   Mean of Amplitude       : 1.741869473
   StDev of Mean Amplitude : 0.00024700039606228544
   Median Amplitude        : 1.7413315
   StDev of Amplitude      : 0.007810838345205069
-  Mean of Start Time      : 1673.5557908640606
-  StDev of Start Time     : 0.9768349362576936
-  Mean of Stop Time       : 2188.17173833127
-  StDev of Stop Time      : 1.4442452354205635
-  Mean of Duration        : 514.6159474672093
-  StDev of Duration       : 1.636848827957593
-  Correlation             : 0.6559598266115546
+  Mean of Start Time      : 1673.5550413952915
+  StDev of Start Time     : 0.9428530439481815
+  Mean of Stop Time       : 2188.1730372991665
+  StDev of Stop Time      : 1.4211634013290355
+  Mean of Duration        : 514.6179959038752
+  StDev of Duration       : 1.5509347147181132
+  Correlation             : 0.6616348739771947
 =================================================================================
 
 =================================================================================
-  Date and time : 2023-08-07 09:12:34
+  Date and time : 2023-08-10 11:04:18
 ------------------------------ CONDITIONS ---------------------------------------
   Folder  : C:/Users/User/Documents/Waveforms/R23-C2/20230805-0007
   Method  : slopes    (linear part in [15,85]% of spectrum height)
-  Borders : [850,1300]
+  Borders : [1500,2800]
 ------------------------------ PREAMP. ------------------------------------------
   Lable   : R23-C2
   Channel : 07
 ------------------------------ RESULTS ------------------------------------------
-  Mean  Input             : 0.06743500639692228
-  StDev of Mean Input     : 1.0739170360337897e-05
-  Median Input            : 0.06741733638235603
-  StDev of Input          : 0.00033960238519238937
-  Mean  Energy            : 3.2403643625348524
-  StDev of Mean Energy    : 0.0004959917561563526
-  Median Energy           : 3.23863523197611
-  StDev of Energy         : 0.01568463650120916
+  Mean  Input             : 0.07968542551489764
+  StDev of Mean Input     : 1.2664823278429695e-05
+  Median Input            : 0.0796691550982353
+  StDev of Input          : 0.0004004968772335868
+  Mean  Energy            : 3.240365340744636
+  StDev of Mean Energy    : 0.000495690825741061
+  Median Energy           : 3.238659265949024
+  StDev of Energy         : 0.015675120245913745
   Mean of Amplitude       : 1.747272054
   StDev of Mean Amplitude : 0.00023649297715858152
   Median Amplitude        : 1.74588
   StDev of Amplitude      : 0.007478564584552931
-  Mean of Start Time      : 1673.349698842852
-  StDev of Start Time     : 0.9438789723715523
-  Mean of Stop Time       : 2195.200000499621
-  StDev of Stop Time      : 17.643892519001344
-  Mean of Duration        : 521.8503016567694
-  StDev of Duration       : 17.578870291006453
-  Correlation             : 0.6008483504151243
+  Mean of Start Time      : 1673.354919464267
+  StDev of Start Time     : 0.9009872867185825
+  Mean of Stop Time       : 2195.19306510808
+  StDev of Stop Time      : 17.62797267700992
+  Mean of Duration        : 521.8381456438133
+  StDev of Duration       : 17.563838202589945
+  Correlation             : 0.6013531952610353
 =================================================================================
 
 =================================================================================
-  Date and time : 2023-08-07 09:13:12
+  Date and time : 2023-08-10 11:04:38
 ------------------------------ CONDITIONS ---------------------------------------
   Folder  : C:/Users/User/Documents/Waveforms/R23-C2/20230805-0008
   Method  : slopes    (linear part in [15,85]% of spectrum height)
-  Borders : [850,1300]
+  Borders : [1500,2800]
 ------------------------------ PREAMP. ------------------------------------------
   Lable   : R23-C2
   Channel : 08
 ------------------------------ RESULTS ------------------------------------------
-  Mean  Input             : 0.0674450104032639
-  StDev of Mean Input     : 1.182514705221526e-05
-  Median Input            : 0.06742006213679708
-  StDev of Input          : 0.00037394398351426277
-  Mean  Energy            : 3.249049578644815
-  StDev of Mean Energy    : 0.0005179044842919471
-  Median Energy           : 3.247759510893066
-  StDev of Energy         : 0.016377577807774494
+  Mean  Input             : 0.07969893171653784
+  StDev of Mean Input     : 1.3862317723291211e-05
+  Median Input            : 0.07967854181382353
+  StDev of Input          : 0.00043836497654519985
+  Mean  Energy            : 3.2490453502968566
+  StDev of Mean Energy    : 0.0005172236822600835
+  Median Energy           : 3.247739028825131
+  StDev of Energy         : 0.016356048957210902
   Mean of Amplitude       : 1.747617107
   StDev of Mean Amplitude : 0.00024868092376254837
   Median Amplitude        : 1.7465205
   StDev of Amplitude      : 0.007863981297243425
-  Mean of Start Time      : 1673.5802014280036
-  StDev of Start Time     : 0.977695175750497
-  Mean of Stop Time       : 2196.574125652068
-  StDev of Stop Time      : 1.4930416469928294
-  Mean of Duration        : 522.9939242240641
-  StDev of Duration       : 1.7364864632173669
-  Correlation             : 0.6414351078761655
+  Mean of Start Time      : 1673.5782032905558
+  StDev of Start Time     : 0.9367360536629373
+  Mean of Stop Time       : 2196.577546465117
+  StDev of Stop Time      : 1.489297960115872
+  Mean of Duration        : 522.9993431745612
+  StDev of Duration       : 1.672334816176837
+  Correlation             : 0.6514939364751441
 =================================================================================
 
 =================================================================================
-  Date and time : 2023-08-07 09:13:34
+  Date and time : 2023-08-10 11:05:06
 ------------------------------ CONDITIONS ---------------------------------------
   Folder  : C:/Users/User/Documents/Waveforms/R23-C2/20230805-0009
   Method  : slopes    (linear part in [15,85]% of spectrum height)
-  Borders : [850,1300]
+  Borders : [1500,2800]
 ------------------------------ PREAMP. ------------------------------------------
   Lable   : R23-C2
   Channel : 09
 ------------------------------ RESULTS ------------------------------------------
-  Mean  Input             : 0.0674512001596079
-  StDev of Mean Input     : 1.1370631896560082e-05
-  Median Input            : 0.06742966788169935
-  StDev of Input          : 0.00035957095228489956
-  Mean  Energy            : 3.202745531402103
-  StDev of Mean Energy    : 0.0005152252672086218
-  Median Energy           : 3.2017544310481645
-  StDev of Energy         : 0.016292853524481083
+  Mean  Input             : 0.07972639025159609
+  StDev of Mean Input     : 1.3200503005175886e-05
+  Median Input            : 0.07971294064774509
+  StDev of Input          : 0.0004174365575625326
+  Mean  Energy            : 3.2027513554348266
+  StDev of Mean Energy    : 0.0005143424886157166
+  Median Energy           : 3.201604982772367
+  StDev of Energy         : 0.016264937614248895
   Mean of Amplitude       : 1.752739563
   StDev of Mean Amplitude : 0.00024861880857652153
   Median Amplitude        : 1.751251
   StDev of Amplitude      : 0.007862017042592127
-  Mean of Start Time      : 1673.5315777384837
-  StDev of Start Time     : 0.969755321366691
-  Mean of Stop Time       : 2187.7860948522916
-  StDev of Stop Time      : 1.4710057078228211
-  Mean of Duration        : 514.2545171138078
-  StDev of Duration       : 1.6086282287489495
-  Correlation             : 0.641333517006878
+  Mean of Start Time      : 1673.5293081184548
+  StDev of Start Time     : 0.9450318503836291
+  Mean of Stop Time       : 2187.7898048767856
+  StDev of Stop Time      : 1.4599122841975765
+  Mean of Duration        : 514.2604967583308
+  StDev of Duration       : 1.5535708578813496
+  Correlation             : 0.6220784686298901
 =================================================================================
 
 =================================================================================
-  Date and time : 2023-08-07 09:14:00
+  Date and time : 2023-08-10 11:05:33
 ------------------------------ CONDITIONS ---------------------------------------
   Folder  : C:/Users/User/Documents/Waveforms/R23-C2/20230805-0010
   Method  : slopes    (linear part in [15,85]% of spectrum height)
-  Borders : [850,1300]
+  Borders : [1500,2800]
 ------------------------------ PREAMP. ------------------------------------------
   Lable   : R23-C2
   Channel : 10
 ------------------------------ RESULTS ------------------------------------------
-  Mean  Input             : 0.06749506351133876
-  StDev of Mean Input     : 1.1519736235088698e-05
-  Median Input            : 0.06749158237488592
-  StDev of Input          : 0.00036428604547253184
-  Mean  Energy            : 3.202685138128065
-  StDev of Mean Energy    : 0.0005186875201366074
-  Median Energy           : 3.2014167837258753
-  StDev of Energy         : 0.0164023395753613
+  Mean  Input             : 0.07976868653306177
+  StDev of Mean Input     : 1.3608291423359254e-05
+  Median Input            : 0.07976715981392157
+  StDev of Input          : 0.00043033195961149925
+  Mean  Energy            : 3.2026901113756887
+  StDev of Mean Energy    : 0.0005182258502493725
+  Median Energy           : 3.201392168430367
+  StDev of Energy         : 0.016387740291653546
   Mean of Amplitude       : 1.751369397
   StDev of Mean Amplitude : 0.0002505080660029204
   Median Amplitude        : 1.751068
   StDev of Amplitude      : 0.007921760608130211
-  Mean of Start Time      : 1672.5635428487903
-  StDev of Start Time     : 0.9815836336572452
-  Mean of Stop Time       : 2186.6364283181715
-  StDev of Stop Time      : 1.4652953695660027
-  Mean of Duration        : 514.0728854693813
-  StDev of Duration       : 1.6739377542536271
-  Correlation             : 0.6130240873597002
+  Mean of Start Time      : 1672.5631862675393
+  StDev of Start Time     : 0.9507155083744558
+  Mean of Stop Time       : 2186.637268185671
+  StDev of Stop Time      : 1.462958952358276
+  Mean of Duration        : 514.0740819181317
+  StDev of Duration       : 1.6246594137556967
+  Correlation             : 0.6278764334293566
 =================================================================================
 
 =================================================================================
-  Date and time : 2023-08-07 09:14:22
+  Date and time : 2023-08-10 11:05:54
 ------------------------------ CONDITIONS ---------------------------------------
   Folder  : C:/Users/User/Documents/Waveforms/R23-C2/20230805-0011
   Method  : slopes    (linear part in [15,85]% of spectrum height)
-  Borders : [850,1300]
+  Borders : [1500,2800]
 ------------------------------ PREAMP. ------------------------------------------
   Lable   : R23-C2
   Channel : 11
 ------------------------------ RESULTS ------------------------------------------
-  Mean  Input             : 0.06744101710441724
-  StDev of Mean Input     : 1.1089330880673936e-05
-  Median Input            : 0.06739767188682483
-  StDev of Input          : 0.00035067543310170527
-  Mean  Energy            : 3.1900304559630492
-  StDev of Mean Energy    : 0.0004912282171101234
-  Median Energy           : 3.1897010342827232
-  StDev of Energy         : 0.015534000170116856
+  Mean  Input             : 0.07969773757885217
+  StDev of Mean Input     : 1.2988219398368842e-05
+  Median Input            : 0.07966249778980392
+  StDev of Input          : 0.0004107235604882738
+  Mean  Energy            : 3.190025298632232
+  StDev of Mean Energy    : 0.0004904236200199013
+  Median Energy           : 3.1895615316540398
+  StDev of Energy         : 0.0155085565760784
   Mean of Amplitude       : 1.743987839
   StDev of Mean Amplitude : 0.00023999101967074013
   Median Amplitude        : 1.7431635
   StDev of Amplitude      : 0.007589182401458116
-  Mean of Start Time      : 1673.4793210514517
-  StDev of Start Time     : 0.937403036642283
-  Mean of Stop Time       : 2187.449106794111
-  StDev of Stop Time      : 1.4243646914757224
-  Mean of Duration        : 513.9697857426589
-  StDev of Duration       : 1.619389443091418
-  Correlation             : 0.6174032289777288
+  Mean of Start Time      : 1673.4852320399618
+  StDev of Start Time     : 0.8980688888802915
+  Mean of Stop Time       : 2187.4402459142843
+  StDev of Stop Time      : 1.4107337856315603
+  Mean of Duration        : 513.9550138743228
+  StDev of Duration       : 1.5413568303230059
+  Correlation             : 0.6167240541941651
 =================================================================================
 
 =================================================================================
-  Date and time : 2023-08-07 09:14:50
+  Date and time : 2023-08-10 11:06:17
 ------------------------------ CONDITIONS ---------------------------------------
   Folder  : C:/Users/User/Documents/Waveforms/R23-C2/20230805-0012
   Method  : slopes    (linear part in [15,85]% of spectrum height)
-  Borders : [850,1300]
+  Borders : [1500,2800]
 ------------------------------ PREAMP. ------------------------------------------
   Lable   : R23-C2
   Channel : 12
 ------------------------------ RESULTS ------------------------------------------
-  Mean  Input             : 0.06739318404932085
-  StDev of Mean Input     : 1.1493450717285488e-05
-  Median Input            : 0.06736064471496178
-  StDev of Input          : 0.00036345482441518134
-  Mean  Energy            : 3.2237116014456872
-  StDev of Mean Energy    : 0.0005144039941284084
+  Mean  Input             : 0.07964952560468451
+  StDev of Mean Input     : 1.35240406101575e-05
+  Median Input            : 0.07960800312627452
+  StDev of Input          : 0.00042766771496710994
+  Mean  Energy            : 3.223683495516301
+  StDev of Mean Energy    : 0.000514370078528451
   Median Energy           : 3.222761491267355
-  StDev of Energy         : 0.01626688258933652
+  StDev of Energy         : 0.016265810083895754
   Mean of Amplitude       : 1.745181652
   StDev of Mean Amplitude : 0.0002449124427985102
   Median Amplitude        : 1.743926
   StDev of Amplitude      : 0.007744811465589949
-  Mean of Start Time      : 1673.5178242238135
-  StDev of Start Time     : 1.0289310460327437
-  Mean of Stop Time       : 2193.1327061185434
-  StDev of Stop Time      : 1.4420667687106783
-  Mean of Duration        : 519.6148818947297
-  StDev of Duration       : 1.65477502268639
-  Correlation             : 0.6197306958688712
+  Mean of Start Time      : 1673.5123689693303
+  StDev of Start Time     : 0.9829730441678313
+  Mean of Stop Time       : 2193.1415703566895
+  StDev of Stop Time      : 1.454989101849562
+  Mean of Duration        : 519.6292013873592
+  StDev of Duration       : 1.6013653626960072
+  Correlation             : 0.588015443620486
 =================================================================================
 
 =================================================================================
-  Date and time : 2023-08-07 09:15:10
+  Date and time : 2023-08-10 11:06:38
 ------------------------------ CONDITIONS ---------------------------------------
   Folder  : C:/Users/User/Documents/Waveforms/R23-C2/20230805-0013
   Method  : slopes    (linear part in [15,85]% of spectrum height)
-  Borders : [850,1300]
+  Borders : [1500,2800]
 ------------------------------ PREAMP. ------------------------------------------
   Lable   : R23-C2
   Channel : 13
 ------------------------------ RESULTS ------------------------------------------
-  Mean  Input             : 0.06747788901419831
-  StDev of Mean Input     : 1.1641232770029614e-05
-  Median Input            : 0.06748613027877975
-  StDev of Input          : 0.0003681281032548471
-  Mean  Energy            : 3.2172953457569413
-  StDev of Mean Energy    : 0.0005537068994642686
-  Median Energy           : 3.217344060769313
-  StDev of Energy         : 0.017509749584569554
+  Mean  Input             : 0.07975574374625216
+  StDev of Mean Input     : 1.3507199542486883e-05
+  Median Input            : 0.07975414395294117
+  StDev of Input          : 0.00042713515364642824
+  Mean  Energy            : 3.2173015963285327
+  StDev of Mean Energy    : 0.0005528129080242763
+  Median Energy           : 3.2175592639220314
+  StDev of Energy         : 0.01748147909297886
   Mean of Amplitude       : 1.753779751
   StDev of Mean Amplitude : 0.00026342616921183935
   Median Amplitude        : 1.753388
   StDev of Amplitude      : 0.008330266900023349
-  Mean of Start Time      : 1673.1887072925742
-  StDev of Start Time     : 6.853320866402156
-  Mean of Stop Time       : 2188.8339014028047
-  StDev of Stop Time      : 1.5537201151798496
-  Mean of Duration        : 515.6451941102306
-  StDev of Duration       : 6.997015843724415
-  Correlation             : 0.6484226682398594
+  Mean of Start Time      : 1673.1895029705925
+  StDev of Start Time     : 6.861447365340786
+  Mean of Stop Time       : 2188.8327125375035
+  StDev of Stop Time      : 1.553504700342763
+  Mean of Duration        : 515.643209566911
+  StDev of Duration       : 7.004249104013279
+  Correlation             : 0.5957380617077578
 =================================================================================
 
 =================================================================================
-  Date and time : 2023-08-07 09:15:35
+  Date and time : 2023-08-10 11:07:01
 ------------------------------ CONDITIONS ---------------------------------------
   Folder  : C:/Users/User/Documents/Waveforms/R23-C2/20230805-0014
   Method  : slopes    (linear part in [15,85]% of spectrum height)
-  Borders : [850,1300]
+  Borders : [1500,2800]
 ------------------------------ PREAMP. ------------------------------------------
   Lable   : R23-C2
   Channel : 14
 ------------------------------ RESULTS ------------------------------------------
-  Mean  Input             : 0.06750077526307334
-  StDev of Mean Input     : 1.142388026961587e-05
-  Median Input            : 0.06749465976726786
-  StDev of Input          : 0.0003612548136904459
-  Mean  Energy            : 3.2259675626898625
-  StDev of Mean Energy    : 0.0005086289961796073
-  Median Energy           : 3.2257191675785344
-  StDev of Energy         : 0.016084261119326402
+  Mean  Input             : 0.07976615046303921
+  StDev of Mean Input     : 1.3347134522290803e-05
+  Median Input            : 0.07975167353343138
+  StDev of Input          : 0.0004220734532710236
+  Mean  Energy            : 3.2259394375025856
+  StDev of Mean Energy    : 0.0005073384847516775
+  Median Energy           : 3.225678164485033
+  StDev of Energy         : 0.016043451564739054
   Mean of Amplitude       : 1.749172616
   StDev of Mean Amplitude : 0.00024681628057910375
   Median Amplitude        : 1.748932
   StDev of Amplitude      : 0.007805016102411504
-  Mean of Start Time      : 1672.959851824773
-  StDev of Start Time     : 1.0019051863091386
-  Mean of Stop Time       : 2191.149608654644
-  StDev of Stop Time      : 17.379755933881675
-  Mean of Duration        : 518.1897568298712
-  StDev of Duration       : 17.446409107009423
-  Correlation             : 0.649172186066431
+  Mean of Start Time      : 1672.9639640458804
+  StDev of Start Time     : 0.9567121420206687
+  Mean of Stop Time       : 2191.143753208291
+  StDev of Stop Time      : 17.374599911548568
+  Mean of Duration        : 518.1797891624104
+  StDev of Duration       : 17.436247969443944
+  Correlation             : 0.655068964907137
 =================================================================================
 
 =================================================================================
-  Date and time : 2023-08-07 09:15:56
+  Date and time : 2023-08-10 11:07:22
 ------------------------------ CONDITIONS ---------------------------------------
   Folder  : C:/Users/User/Documents/Waveforms/R23-C2/20230805-0015
   Method  : slopes    (linear part in [15,85]% of spectrum height)
-  Borders : [850,1300]
+  Borders : [1500,2800]
 ------------------------------ PREAMP. ------------------------------------------
   Lable   : R23-C2
   Channel : 15
 ------------------------------ RESULTS ------------------------------------------
-  Mean  Input             : 0.06746442814043169
-  StDev of Mean Input     : 1.141910256769696e-05
-  Median Input            : 0.06745049368094092
-  StDev of Input          : 0.0003611037294899947
-  Mean  Energy            : 3.200341127108034
-  StDev of Mean Energy    : 0.0005146973844694453
-  Median Energy           : 3.199477497206975
-  StDev of Energy         : 0.01627616040654822
+  Mean  Input             : 0.07972247159729608
+  StDev of Mean Input     : 1.3535463799418435e-05
+  Median Input            : 0.07971007224676471
+  StDev of Input          : 0.0004280289479291873
+  Mean  Energy            : 3.2003461469088297
+  StDev of Mean Energy    : 0.0005149517734327017
+  Median Energy           : 3.1993960200157416
+  StDev of Energy         : 0.016284204891903215
   Mean of Amplitude       : 1.740324788
   StDev of Mean Amplitude : 0.0002503957710929584
   Median Amplitude        : 1.739287
   StDev of Amplitude      : 0.007918209531278976
-  Mean of Start Time      : 1673.5254186693041
-  StDev of Start Time     : 0.9446603018270034
-  Mean of Stop Time       : 2191.266938576948
-  StDev of Stop Time      : 1.474031424536981
-  Mean of Duration        : 517.7415199076439
-  StDev of Duration       : 1.6620881858767087
-  Correlation             : 0.6372229911343656
+  Mean of Start Time      : 1673.527260104017
+  StDev of Start Time     : 0.9129973016051683
+  Mean of Stop Time       : 2191.2642036869975
+  StDev of Stop Time      : 1.4549655368366294
+  Mean of Duration        : 517.7369435829808
+  StDev of Duration       : 1.5876011868356097
+  Correlation             : 0.6599752656745054
 =================================================================================
 
 =================================================================================
-  Date and time : 2023-08-07 09:16:17
+  Date and time : 2023-08-10 11:07:42
 ------------------------------ CONDITIONS ---------------------------------------
   Folder  : C:/Users/User/Documents/Waveforms/R23-C2/20230805-0016
   Method  : slopes    (linear part in [15,85]% of spectrum height)
-  Borders : [850,1300]
+  Borders : [1500,2800]
 ------------------------------ PREAMP. ------------------------------------------
   Lable   : R23-C2
   Channel : 16
 ------------------------------ RESULTS ------------------------------------------
-  Mean  Input             : 0.06750307726865178
-  StDev of Mean Input     : 1.167686253320682e-05
-  Median Input            : 0.06749288367299297
-  StDev of Input          : 0.00036925481529617076
-  Mean  Energy            : 3.225441796683992
-  StDev of Mean Energy    : 0.0005093533840246307
-  Median Energy           : 3.2245860101572084
-  StDev of Energy         : 0.016107168274322552
+  Mean  Input             : 0.07976977369478352
+  StDev of Mean Input     : 1.3217076371269662e-05
+  Median Input            : 0.07975075391431373
+  StDev of Input          : 0.000417960653416054
+  Mean  Energy            : 3.2254470324070112
+  StDev of Mean Energy    : 0.0005087734675300352
+  Median Energy           : 3.224662799859856
+  StDev of Energy         : 0.016088829704566328
   Mean of Amplitude       : 1.746148278
   StDev of Mean Amplitude : 0.00023961016380636972
   Median Amplitude        : 1.745635
   StDev of Amplitude      : 0.007577138681541689
-  Mean of Start Time      : 1672.3992050162728
-  StDev of Start Time     : 7.426017204475239
-  Mean of Stop Time       : 2192.8689241653174
-  StDev of Stop Time      : 1.564456233268477
-  Mean of Duration        : 520.4697191490447
-  StDev of Duration       : 7.603560557745104
-  Correlation             : 0.6038552615163809
+  Mean of Start Time      : 1672.3973428217787
+  StDev of Start Time     : 7.414269100846608
+  Mean of Stop Time       : 2192.8722449308893
+  StDev of Stop Time      : 1.5406112128929974
+  Mean of Duration        : 520.474902109111
+  StDev of Duration       : 7.572920057550478
+  Correlation             : 0.619573044993343
 =================================================================================
 
 
