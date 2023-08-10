@@ -1,8 +1,8 @@
 #===============================================================================
 path_to_folder = "../../data//20230808-0033"
 #DIR_PATH     = "../20230605-0005/"
-LEFT_BORDER  = 850
-RIGHT_BORDER = 1300
+LEFT_BORDER  = 1500
+RIGHT_BORDER = 2800
 Y_LOW        = 0.15
 Y_HIGH       = 0.85
 SHOW_SPEC    = 1
@@ -274,6 +274,10 @@ for i in range(len(x)):
 
 
 model = Models.Gauss2D_pdf("model",xvar=xx,yvar=yy)
+ro, wo = model.fitTo( ds, draw= True,silent=True)
+ro, wo = model.fitTo( ds, draw= True,silent=True)
+ro, wo = model.fitTo( ds, draw= True,silent=True)
+ro, wo = model.fitTo( ds, draw= True,silent=True)
 ro, wo = model.fitTo( ds, draw= True,silent=True)
 ro, wo = model.fitTo( ds, draw= True,silent=True)
 ro, wo = model.fitTo( ds, draw= True,silent=True)
