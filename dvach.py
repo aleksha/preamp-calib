@@ -94,14 +94,14 @@ def calc_energy_baseline(spec,chan,max,left_base,right_base, AB=1):
     energy = 0.
     i = chan
     while spec[2][AB][i-1]>left_base and i>-1:
-        if i+1==8004:
+        if i-1<0 or i-1>8002:
             break
         energy += ( (spec[1][i]-spec[1][i-1])*0.5*( spec[2][AB][i]+spec[2][AB][i+1] ) )
         i-=1
     i_min = i
     i = chan
     while ( spec[2][AB][i-1]>right_base and (i<len(spec[1])) ):
-        if i+1==8004:
+        if i+1>8003 or i<0:
             break
         energy += ( (spec[1][i+1]-spec[1][i])*0.5*( spec[2][AB][i]+spec[2][AB][i+1] ) )
         i+=1
